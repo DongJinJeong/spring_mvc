@@ -1,4 +1,4 @@
-package com.example.demo.basic.response;
+package com.example.demo.servlet.basic.response;
 
 import java.io.IOException;
 import java.io.PrintWriter;

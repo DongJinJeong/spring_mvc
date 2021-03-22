@@ -1,4 +1,4 @@
-package com.example.demo.basic.request;
+package com.example.demo.servlet.basic.request;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.util.StreamUtils;
 
-import com.example.demo.basic.HelloData;
+import com.example.demo.servlet.basic.HelloData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebServlet(name = "requestBodyJsonServlet", urlPatterns = "/request-body-json")

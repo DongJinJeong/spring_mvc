@@ -1,4 +1,4 @@
-package com.example.demo.basic.response;
+package com.example.demo.servlet.basic.response;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.example.demo.basic.HelloData;
+import com.example.demo.servlet.basic.HelloData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebServlet(name = "responseJsonServlet", urlPatterns = "/response-json")
