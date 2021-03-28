@@ -17,11 +17,15 @@ import com.example.demo.servlet.web.frontcontroller.MyView;
 import com.example.demo.servlet.web.frontcontroller.v3.controller.MemberFormControllerV3;
 import com.example.demo.servlet.web.frontcontroller.v3.controller.MemberListControllerV3;
 import com.example.demo.servlet.web.frontcontroller.v3.controller.MemberSaveControllerV3;
+import com.example.demo.servlet.web.frontcontroller.v4.controller.MemberFormControllerV4;
+import com.example.demo.servlet.web.frontcontroller.v4.controller.MemberListControllerV4;
+import com.example.demo.servlet.web.frontcontroller.v4.controller.MemberSaveControllerV4;
 import com.example.demo.servlet.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
+import com.example.demo.servlet.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
 
 @WebServlet(name = "frontControllerServletV5", urlPatterns = "/front-controller/v5/*")
 public class FrontControllerServletV5 extends HttpServlet {
-	
+
 	private final Map<String, Object> handlerMappingMap = new HashMap<>();
 	private final List<MyHandlerAdapter> handlerAdapters = new ArrayList<>();
 
@@ -34,10 +38,14 @@ public class FrontControllerServletV5 extends HttpServlet {
 		handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
 		handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
 		handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
+		handlerMappingMap.put("/front-controller/v5/v4/members/new-form", new MemberFormControllerV4());
+		handlerMappingMap.put("/front-controller/v5/v4/members/save", new MemberSaveControllerV4());
+		handlerMappingMap.put("/front-controller/v5/v4/members", new MemberListControllerV4());
 	}
 
 	private void initHandlerAdapters() {
 		handlerAdapters.add(new ControllerV3HandlerAdapter());
+		handlerAdapters.add(new ControllerV4HandlerAdapter());
 	}
 
 	@Override
@@ -71,5 +79,5 @@ public class FrontControllerServletV5 extends HttpServlet {
 	private MyView viewResolver(String viewName) {
 		return new MyView("/WEB-INF/views/" + viewName + ".jsp");
 	}
-	
+
 }
